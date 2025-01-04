@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>Hello Hexo</title>
-    <link href="/2025/01/04/hello-hexo/"/>
-    <url>/2025/01/04/hello-hexo/</url>
+    <title>Hello Yavin</title>
+    <link href="/2025/01/04/hello-yavin/"/>
+    <url>/2025/01/04/hello-yavin/</url>
     
-    <content type="html"><![CDATA[<p><img src="/2025/01/04/hello-hexo/file-20250104175759547.png"></p>]]></content>
+    <content type="html"><![CDATA[<p>放一张测试图片<br><img src="/2025/01/04/hello-yavin/file-20250104175759547.png"><br>测试用blog</p>]]></content>
     
     
     
