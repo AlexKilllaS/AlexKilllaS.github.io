@@ -1,0 +1,110 @@
+@keyframes textShine {
+  0% {
+    color: #892be2e1;
+    text-shadow: 0 0 8px #8a2be2;
+  }
+  50% {
+    color: #9370db;
+    text-shadow: 0 0 20px #9370db;
+  }
+  100% {
+    color: #8a2be2;
+    text-shadow: 0 0 8px #8a2be2;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.navbar-brand {
+  animation: textShine 3s infinite;
+  font-weight: bold;
+}
+
+/*
+- `#` 是ID选择器，用于选择具有特定id属性的元素，一个页面中同一个ID只能使用一次
+- `.` 是类选择器，用于选择具有特定class属性的元素，可以应用于多个元素 
+*/
+
+#subtitle {
+  animation: textShine 3s infinite;
+  position: relative;
+}
+
+#subtitle::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(138, 43, 226, 0.2) 45%,
+    transparent 50%
+  );
+  animation: particleMove 3s infinite;
+  pointer-events: none;
+}
+
+#subtitle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 85%,
+    rgba(138, 43, 226, 0.15)
+  );
+  animation: pulseEffect 2s infinite;
+  pointer-events: none;
+}
+
+/* 粒子移动动画 */
+@keyframes particleMove {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(0%) translateY(-25%) rotate(90deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(50%) translateY(0%) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(0%) translateY(25%) rotate(270deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* 脉冲效果动画 */
+@keyframes pulseEffect {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+.typed-cursor {
+  animation: textShine 3s infinite, blink 1s infinite !important;
+}
